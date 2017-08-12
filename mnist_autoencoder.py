@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 
 # Hyperparameters
 mnist_width = 28
-corruption_level = 0.2
+corruption_level = 0.3
 n_visible = mnist_width * mnist_width
-code_layer_size = 30
-layers = [n_visible, 400, code_layer_size]
+code_layer_size = 20
+layers = [n_visible, 500, code_layer_size]
 alpha = 0.01
 
 # Input placeholders for original image and its corrupted version
@@ -82,11 +82,7 @@ def show_encoding(sess, i):
     plt.imshow((noise_mask * images).reshape((28, 28)), cmap='gray')
     plt.show()
 
-    # print(img.shape)
-    # print(mask_np.shape)
-    # print((mask_np * img).shape)
-    reconstructed = sess.run(decoding, feed_dict={original: images, corrupted: mask_np * images})
-    # plt.imshow(digit.reshape((28, 28)), cmap='gray')
+    reconstructed = sess.run(decoding, feed_dict={original: images, corrupted: noise_mask * images})
 
     plt.imshow(reconstructed.reshape((28, 28)), cmap='gray')
     plt.show()
@@ -96,5 +92,8 @@ with tf.Session() as sess:
     # tf.initialize_all_variables().run()
     saver.restore(sess, './autoencoder_model')
     train_eval(sess)
-    # for x in range(20):
-    #     show_encoding(sess, x)
+
+    # Test images used for examples in README
+    indices = [6, 15]
+    for x in indices:
+        show_encoding(sess, x)
