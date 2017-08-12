@@ -3,13 +3,13 @@
 The goal was to remove noise and irregularities from MNIST digits using Tensorflow (reproducing results originally obtained in 2006).
 Below are two digits called <b>A</b> and <b>B</b>.
 
-Original (A): <img src="http://imgur.com/uqErPKC.png" height="100"> Corrupted (A): <img src="http://imgur.com/6lbm2hv.png" height="100">
+Original (Digit A): <img src="http://imgur.com/uqErPKC.png" height="100"> Corrupted (Digit A): <img src="http://imgur.com/6lbm2hv.png" height="100">
 
-Original (B): <img src="http://imgur.com/2roXuBv.png" height="100"> Corrupted (B): <img src="http://imgur.com/WqXmKDS.png" height="100">
+Original (Digit B): <img src="http://imgur.com/2roXuBv.png" height="100"> Corrupted (Digit B): <img src="http://imgur.com/WqXmKDS.png" height="100">
 
 The network (with model layers of size [768, 400, <b>n</b>, 400, 768] where <b>n</b> is size of the encoded layer) then attempts to reconstruct the original from the corrupted version:
 
-| Code Layer Size (n)  | Asymptotic Error (20 epochs)  |  Reconstructed A | Reconstructed B |
+| Code Layer Size (n)  | Asymptotic Error (20 epochs)  |  Reconstructed Digit A | Reconstructed Digit B |
 |---|---|---|---|
 |  10 |  2.2e6 |   <img src="http://imgur.com/UVZHqpU.png" height="150">    | <img src="http://imgur.com/zwm7K3E.png" height="150">|
 | 20  |  1.5e6 | <img src="http://imgur.com/AMvXzbH.png" height="150">    | <img src="http://imgur.com/67Tosuw.png" height="150">|
