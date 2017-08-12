@@ -1,6 +1,6 @@
 **MNIST-Autoencoder**
 ---
-Removing noise and irregularities from MNIST digits in Tensorflow.
+The goal was to remove noise and irregularities from MNIST digits using Tensorflow (reproducing results originally obtained in 2006).
 Below are two digits called <b>A</b> and <b>B</b>.
 
 Original (A): <img src="http://imgur.com/uqErPKC.png" height="100"> Corrupted (A): <img src="http://imgur.com/6lbm2hv.png" height="100">
@@ -28,3 +28,5 @@ At least for this network model of [768, 400, <b>n</b>, 400, 768] the best found
 ### Afterthoughts
 ---
 I have since been informed that using Sigmoid for activation is a bit outdated and that ReLU provides sufficient non-linearities and trains faster.
+
+Pre-training weights (G. E. Hinton, R. R. Salakhutdinov - Reducing the Dimensionality of Data with Neural Networks, 2006) rather than mirroring the initial weights of the encoder and decoders may allow for smaller coding layers when training in 20 epochs.
