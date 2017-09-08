@@ -11,9 +11,9 @@ The network (with model layers of size [768, 400, <b>n</b>, 400, 768] where <b>n
 
 | Code Layer Size (n)  | Asymptotic Error (20 epochs)  |  Reconstructed Digit A | Reconstructed Digit B |
 |---|---|---|---|
-|  10 |  2.2e6 |   <img src="http://imgur.com/UVZHqpU.png" height="150">    | <img src="http://imgur.com/zwm7K3E.png" height="150">|
-| 20  |  1.5e6 | <img src="http://imgur.com/AMvXzbH.png" height="150">    | <img src="http://imgur.com/67Tosuw.png" height="150">|
-| 30  |  1.0e6 | <img src="http://imgur.com/S5qaKLx.png" height="150">    | <img src="http://imgur.com/DuwkQEf.png" height="150">|
+|  10 |  2.2e5 |   <img src="http://imgur.com/UVZHqpU.png" height="150">    | <img src="http://imgur.com/zwm7K3E.png" height="150">|
+| 20  |  1.5e5 | <img src="http://imgur.com/AMvXzbH.png" height="150">    | <img src="http://imgur.com/67Tosuw.png" height="150">|
+| 30  |  1.0e5 | <img src="http://imgur.com/S5qaKLx.png" height="150">    | <img src="http://imgur.com/DuwkQEf.png" height="150">|
 
 It is evident that a coding layer of size <b>10</b> is insufficient to reconstruct the original image. The '4' also resembling a '9' and the '5' a '6'.
 
