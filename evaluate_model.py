@@ -1,12 +1,13 @@
 import tensorflow as tf
 import tensorflow_autoencoder as model
-from tensorflow.examples.tutorials.mnist import input_data
+# from tensorflow.examples.tutorials.mnist import input_data
+import emnist_input_data as input_data #input_data
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Paths
-model_save_path = './trained_models/autoencoder_model'
-mnist_data_path = './MNIST_data/'
+model_save_path = './trained_models_emnist/autoencoder_model' # './trained_models/autoencoder_model'
+mnist_data_path = './EMNIST_data/' # './MNIST_data/'
 
 # Parameters
 corruption_level = 0.3
@@ -45,6 +46,6 @@ with tf.Session() as sess:
     print('Cost: ', sess.run(model.cost, feed_dict={model.original: teX, model.corrupted: noise_mask * teX}))
 
     # Test images used for examples in README
-    indices = [6, 15]
+    indices = range(10, 20)
     for x in indices:
         show_encoding(sess, x)

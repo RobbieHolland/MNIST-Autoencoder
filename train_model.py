@@ -1,17 +1,18 @@
 import tensorflow as tf
 import numpy as np
-from tensorflow.examples.tutorials.mnist import input_data
+# from tensorflow.examples.tutorials.mnist import input_data
+import emnist_input_data as input_data #input_data
 import tensorflow_autoencoder as model
 
 # Paths
-model_save_path = './trained_models/autoencoder_model'
-mnist_data_path = './MNIST_data/'
+model_save_path = './trained_models_emnist/autoencoder_model' # './trained_models/autoencoder_model'
+mnist_data_path = './EMNIST_data/' # './MNIST_data/'
 
 # Parameters
 mnist_width = 28
 corruption_level = 0.3
 n_visible = mnist_width * mnist_width
-code_layer_size = 20
+code_layer_size = 50
 layers = [n_visible, 500, code_layer_size]
 
 # Hyperparameters
@@ -38,6 +39,6 @@ def train_model(sess):
 
 # Run training / viewing
 with tf.Session() as sess:
-    # tf.initialize_all_variables().run()
-    saver.restore(sess, model_save_path)
+    tf.initialize_all_variables().run()
+    # saver.restore(sess, model_save_path)
     train_model(sess)
